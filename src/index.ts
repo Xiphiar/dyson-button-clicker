@@ -1,7 +1,6 @@
 import { executeScript, getKeys, queryScript } from './exec';
 import { getStatus } from './helpers';
 
-const MNEMONIC = `robust perfect wood learn symbol crew pumpkin vapor frame color network possible gift stay soft vocal skate original cotton voyage camera write trash solve`
 export const SCRIPT = 'dys10gl3kv0fmx2xyv4dm7gurqt95qe43r2k8j4xly'
 export const RPC = 'http://dys-tm.dysonprotocol.com:26657'
 export const CHAINID = 'dyson-mainnet-01'
@@ -15,11 +14,12 @@ const FIVE_MINUTES = 300000
 const main = async () => {
     // Verify Key Exists
     const keys = await getKeys();
-
     const winnerKey = keys.find((k: any)=>k.name===KEYID)
     if (!winnerKey) {
         throw 'Key Not Found'
     }
+
+    // Start
     console.log('Winner Address:', winnerKey.address)
 
     // Startup Check
